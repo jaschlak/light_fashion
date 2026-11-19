@@ -1,10 +1,14 @@
 # HUZZAH32 and WS2812 bench test
 
-This procedure is for the current USB-powered bench test. It is not the final
-battery-powered garment circuit.
+This procedure is for the current 5 V bench test. It is not the final
+battery-powered garment circuit. Two safe power approaches are documented:
+Micro-USB power, or a verified regulated 5 V DC wall adapter with bare leads.
 
 Open the [illustrated wiring diagram](../diagrams/huzzah32-neopixel-usb-wiring.html)
 in a browser while wiring.
+
+For a wall adapter with bare leads, use the cleaner
+[bare-lead wall-adapter diagram](../diagrams/huzzah32-wall-wart-wiring.svg).
 
 ## Known hardware
 
@@ -27,6 +31,21 @@ in a browser while wiring.
 | Capacitor `+` lead | Strip red `VCC`, near the strip input |
 | Capacitor `-` lead/marked stripe | Strip white `GND`, near the strip input |
 
+## Bare-lead 5 V wall-adapter option
+
+Use this option only if the adapter label and a multimeter both confirm a
+regulated **5.0 V DC** output. Do not infer polarity from wire color.
+
+| Verified wall-adapter lead | Connects to |
+|---|---|
+| `+5 V` positive | HUZZAH32 `USB` pin **and** strip red `VCC` |
+| `0 V` negative | HUZZAH32 `GND` **and** strip white `GND` |
+| HUZZAH32 GPIO `14` | 330–470 ohm resistor, then strip green `DIN` |
+
+Program the HUZZAH32 over Micro-USB first. Disconnect Micro-USB before applying
+the bare-lead supply to the `USB` pin. Supplying external 5 V to that pin while
+also connected to a computer can back-power the USB connection.
+
 Connect to the strip's **input** end. Printed arrows must point away from the
 HUZZAH32 and toward the later pixels.
 
@@ -39,7 +58,8 @@ HUZZAH32 and toward the later pixels.
 4. Configure firmware for 18 pixels on GPIO 14 and a maximum brightness of 10%
    for the first test.
 5. Place the circuit on a nonconductive, nonflammable work surface.
-6. Plug the USB cable into the wall adapter—not a computer—for the first test.
+6. Apply power from only one documented source. Do not have Micro-USB and the
+   bare-lead supply connected at the same time.
 7. Run solid cyan for 30 seconds, then disconnect power and check the strip,
    resistor, wires, and controller for unexpected warmth.
 

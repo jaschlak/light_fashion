@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">HUZZAH32 and WS2812 strip powered by a five-volt bare-lead wall adapter</title>
+  <desc id="desc">The verified positive five-volt wall-adapter lead connects to both the Feather USB pin and the LED strip red VCC wire. The verified negative lead connects to both Feather ground and the strip white ground wire. Feather GPIO 14 connects through a 330 to 470 ohm resistor to the strip green data-input wire. A 500 to 1000 microfarad capacitor connects across strip power with correct polarity.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7f8fb; }
+      .card { fill: #ffffff; stroke: #263238; stroke-width: 3; }
+      .soft { fill: #eef2f6; stroke: #66737f; stroke-width: 2; }
+      .warn { fill: #fff3cd; stroke: #9a6700; stroke-width: 3; }
+      .danger { fill: #fde8e8; stroke: #b42318; stroke-width: 3; }
+      .ok { fill: #e9f7ef; stroke: #18794e; stroke-width: 3; }
+      .title { font: 700 34px Arial, sans-serif; fill: #17212b; }
+      .h2 { font: 700 24px Arial, sans-serif; fill: #17212b; }
+      .label { font: 700 19px Arial, sans-serif; fill: #17212b; }
+      .body { font: 17px Arial, sans-serif; fill: #263238; }
+      .small { font: 15px Arial, sans-serif; fill: #4e5b66; }
+      .pintext { font: 700 17px Arial, sans-serif; fill: #ffffff; }
+      .redwire { fill: none; stroke: #d92d20; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+      .groundwire { fill: none; stroke: #263238; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+      .datawire { fill: none; stroke: #16834a; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+      .thinred { fill: none; stroke: #d92d20; stroke-width: 5; }
+      .thinground { fill: none; stroke: #263238; stroke-width: 5; }
+      .thindata { fill: none; stroke: #16834a; stroke-width: 5; }
+      .node { stroke: #ffffff; stroke-width: 3; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="900" class="bg"/>
+  <text x="700" y="48" text-anchor="middle" class="title">HUZZAH32 + 30 cm WS2812 strip — bare-lead 5 V supply</text>
+
+  <rect x="55" y="72" width="1290" height="70" rx="12" class="warn"/>
+  <text x="700" y="101" text-anchor="middle" class="label">Connect this only after the adapter label and a multimeter both confirm regulated 5.0 V DC.</text>
+  <text x="700" y="126" text-anchor="middle" class="body">Do not trust insulation color. Do not connect Micro-USB while the wall adapter is connected to the Feather USB pin.</text>
+
+  <!-- Supply -->
+  <rect x="60" y="190" width="285" height="250" rx="18" class="card"/>
+  <text x="202" y="228" text-anchor="middle" class="h2">Wall adapter</text>
+  <text x="202" y="258" text-anchor="middle" class="body">Required output:</text>
+  <text x="202" y="288" text-anchor="middle" class="label">5.0 V DC · ≥ 1 A</text>
+  <text x="202" y="320" text-anchor="middle" class="small">Verify with multimeter first</text>
+  <rect x="90" y="346" width="225" height="64" rx="10" class="soft"/>
+  <text x="202" y="373" text-anchor="middle" class="body">Bare leads</text>
+  <text x="202" y="397" text-anchor="middle" class="small">Identify +5 V and 0 V/GND</text>
+
+  <!-- Supply terminals -->
+  <circle cx="345" cy="265" r="14" fill="#d92d20" class="node"/>
+  <text x="319" y="270" text-anchor="end" class="label">+5 V</text>
+  <circle cx="345" cy="365" r="14" fill="#263238" class="node"/>
+  <text x="319" y="370" text-anchor="end" class="label">0 V</text>
+
+  <!-- HUZZAH board -->
+  <rect x="525" y="185" width="360" height="280" rx="18" class="card"/>
+  <text x="705" y="222" text-anchor="middle" class="h2">Adafruit HUZZAH32 Feather</text>
+  <rect x="555" y="250" width="122" height="150" rx="10" fill="#1e2935"/>
+  <text x="616" y="315" text-anchor="middle" class="pintext">ESP32</text>
+  <text x="616" y="340" text-anchor="middle" class="pintext">WROOM-32</text>
+  <rect x="505" y="300" width="45" height="58" rx="5" fill="#9aa5ad" stroke="#263238" stroke-width="2"/>
+  <text x="527" y="382" text-anchor="middle" class="small">Micro-USB</text>
+  <text x="705" y="430" text-anchor="middle" class="small">Use the printed silkscreen labels—not pin position alone.</text>
+
+  <!-- Relevant Feather pins placed as clearly labelled connection tabs -->
+  <rect x="830" y="245" width="92" height="42" rx="8" fill="#d92d20"/>
+  <text x="876" y="272" text-anchor="middle" class="pintext">USB pin</text>
+  <rect x="830" y="307" width="92" height="42" rx="8" fill="#16834a"/>
+  <text x="876" y="334" text-anchor="middle" class="pintext">GPIO 14</text>
+  <rect x="830" y="369" width="92" height="42" rx="8" fill="#263238"/>
+  <text x="876" y="396" text-anchor="middle" class="pintext">GND</text>
+
+  <!-- LED strip -->
+  <rect x="1050" y="185" width="300" height="280" rx="18" class="card"/>
+  <text x="1200" y="222" text-anchor="middle" class="h2">30 cm LED segment</text>
+  <text x="1200" y="247" text-anchor="middle" class="small">18 pixels · connect at DIN end</text>
+  <rect x="1088" y="276" width="224" height="98" rx="8" fill="#e7f8ff" stroke="#1677a6" stroke-width="3"/>
+  <g fill="#40d9f5" stroke="#1677a6" stroke-width="2">
+    <rect x="1100" y="306" width="19" height="19" rx="3"/><rect x="1126" y="306" width="19" height="19" rx="3"/>
+    <rect x="1152" y="306" width="19" height="19" rx="3"/><rect x="1178" y="306" width="19" height="19" rx="3"/>
+    <rect x="1204" y="306" width="19" height="19" rx="3"/><rect x="1230" y="306" width="19" height="19" rx="3"/>
+    <rect x="1256" y="306" width="19" height="19" rx="3"/><rect x="1282" y="306" width="19" height="19" rx="3"/>
+  </g>
+  <text x="1200" y="355" text-anchor="middle" class="small">arrows point this way →</text>
+
+  <!-- Strip connection tabs -->
+  <rect x="1000" y="245" width="100" height="42" rx="8" fill="#d92d20"/>
+  <text x="1050" y="272" text-anchor="middle" class="pintext">RED VCC</text>
+  <rect x="1000" y="307" width="100" height="42" rx="8" fill="#16834a"/>
+  <text x="1050" y="334" text-anchor="middle" class="pintext">GREEN DIN</text>
+  <rect x="1000" y="369" width="100" height="42" rx="8" fill="#263238"/>
+  <text x="1050" y="396" text-anchor="middle" class="pintext">WHITE GND</text>
+
+  <!-- Wires use dedicated channels outside all text -->
+  <path d="M345 265 H430 V165 H960 V266 H922" class="redwire"/>
+  <path d="M960 266 H1000" class="redwire"/>
+  <circle cx="430" cy="265" r="10" fill="#d92d20" class="node"/>
+
+  <path d="M345 365 H455 V500 H960 V390 H922" class="groundwire"/>
+  <path d="M960 390 H1000" class="groundwire"/>
+  <circle cx="455" cy="365" r="10" fill="#263238" class="node"/>
+
+  <path d="M922 328 H938" class="datawire"/>
+  <rect x="938" y="307" width="44" height="42" rx="8" class="ok"/>
+  <text x="960" y="334" text-anchor="middle" class="label">R1</text>
+  <path d="M982 328 H1000" class="datawire"/>
+
+  <!-- Connection labels placed away from the routes -->
+  <rect x="375" y="185" width="124" height="34" rx="17" fill="#fde8e8"/>
+  <text x="437" y="208" text-anchor="middle" class="label">+5 V rail</text>
+  <rect x="375" y="520" width="155" height="34" rx="17" fill="#e5e7eb"/>
+  <text x="452" y="543" text-anchor="middle" class="label">common ground</text>
+  <rect x="930" y="515" width="250" height="38" rx="12" class="ok"/>
+  <text x="1055" y="540" text-anchor="middle" class="body">R1 = 330–470 Ω data resistor</text>
+
+  <!-- Capacitor inset -->
+  <rect x="795" y="565" width="555" height="126" rx="16" class="soft"/>
+  <text x="1072" y="595" text-anchor="middle" class="label">Capacitor at the LED-strip input</text>
+  <line x1="870" y1="625" x2="1015" y2="625" class="thinred"/>
+  <text x="850" y="631" text-anchor="end" class="body">RED VCC</text>
+  <line x1="870" y1="660" x2="1015" y2="660" class="thinground"/>
+  <text x="850" y="666" text-anchor="end" class="body">WHITE GND</text>
+  <rect x="1015" y="607" width="95" height="70" rx="10" class="card"/>
+  <text x="1062" y="630" text-anchor="middle" class="label">+</text>
+  <text x="1062" y="665" text-anchor="middle" class="label">− stripe</text>
+  <line x1="1110" y1="625" x2="1250" y2="625" class="thinred"/>
+  <line x1="1110" y1="660" x2="1250" y2="660" class="thinground"/>
+  <text x="1280" y="634" text-anchor="middle" class="body">500–1000 µF</text>
+  <text x="1280" y="660" text-anchor="middle" class="small">≥ 6.3 V rating</text>
+
+  <!-- Procedure and warnings -->
+  <rect x="55" y="720" width="1290" height="125" rx="16" class="danger"/>
+  <text x="80" y="752" class="label">Power-up rules</text>
+  <text x="80" y="782" class="body">1. Program over Micro-USB first. Then unplug Micro-USB before attaching the bare-lead supply to the USB pin.</text>
+  <text x="80" y="810" class="body">2. Set 18 pixels and 10% brightness. Power only the cut segment—never the complete five-meter reel.</text>
+  <text x="80" y="838" class="body">3. If the adapter is not exactly 5 V DC, or polarity is uncertain, do not connect it.</text>
+
+  <text x="700" y="880" text-anchor="middle" class="small">Bench circuit only · not yet a wearable or battery circuit</text>
+</svg>
+
