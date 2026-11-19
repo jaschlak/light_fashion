@@ -24,6 +24,12 @@ The Blender scene is a design study, not an electrical specification. The
 physical prototype currently uses the hardware identified in
 [the hardware inventory](docs/HARDWARE.md).
 
+## Prototype versions
+
+- [V1: straight-line shirt](projects/v1-straight-line-shirt/README.md) — one
+  removable, diffused cyan chest bar using the existing HUZZAH32 and WS2812
+  strip for initial bench testing
+
 ## Tonight's bench test
 
 Use only a cut 30 cm section of the strip—not the five-meter reel—and start at
@@ -31,6 +37,7 @@ Use only a cut 30 cm section of the strip—not the five-meter reel—and start 
 
 - [Bench-test instructions](docs/BENCH_TEST.md)
 - [Illustrated HUZZAH32 wiring diagram](diagrams/huzzah32-neopixel-usb-wiring.html)
+- [Clean bare-lead 5 V supply diagram](diagrams/huzzah32-wall-wart-wiring.svg)
 - [Adafruit HUZZAH32 pinout](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/pinouts)
 - [Adafruit NeoPixel best practices](https://learn.adafruit.com/adafruit-neopixel-uberguide/best-practices)
 
