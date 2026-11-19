@@ -1,0 +1,77 @@
+# Codex and local attachments
+/.codex-attachments/
+/.codex/
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.code-workspace
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Blender: keep authored .blend files, ignore automatic backups and caches
+*.blend1
+*.blend2
+*.blend@
+*.blend~
+*.bphys
+*.vdb
+/blender/cache/
+/blender/tmp/
+/blender/renders/debug*.png
+
+# Downloaded third-party Blender/MakeHuman assets are documented, not vendored
+/blender/assets/*
+!/blender/assets/README.md
+
+# KiCad local state, recovery files, and generated fabrication outputs
+*.kicad_prl
+*.kicad_pro-bak
+*-backups/
+_autosave-*
+~*.lck
+*.lck
+*.000
+*.bak
+/electronics/**/build/
+/electronics/**/gerbers/
+/electronics/**/fabrication/
+
+# Arduino and PlatformIO build products
+.arduinoIDE/
+.pio/
+.pioenvs/
+.piolibdeps/
+*.elf
+*.hex
+*.bin
+*.map
+/firmware/**/build/
+
+# Local reference downloads
+/references/downloads/
+/references/local/
+
+# One-off diagram renderer request; Mermaid and exported diagrams are retained
+/diagrams/shirt-poc-build.json
+

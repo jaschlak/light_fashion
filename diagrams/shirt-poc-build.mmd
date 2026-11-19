@@ -1,0 +1,57 @@
+flowchart LR
+    subgraph GARMENT["How the light attaches to the shirt"]
+        direction TB
+        SHIRT["Your black stretch shirt"]
+        WINDOW["Translucent fabric window<br/>with 5-10 mm soft air gap"]
+        FILAMENT["Your NeoPixel strip<br/>about 300 mm long"]
+        CARRIER["Flexible non-stretch carrier<br/>ribbon or folded scrap fabric"]
+        TABS["Three small sewn tabs<br/>or hand-tacked loops"]
+        SEAM["Flexible wire routed<br/>down the inside side seam"]
+        POCKETS["Two small hem pockets<br/>controller and battery kept separate"]
+
+        SHIRT --> WINDOW
+        WINDOW --> FILAMENT
+        FILAMENT --> CARRIER
+        CARRIER --> TABS
+        FILAMENT --> SEAM
+        SEAM --> POCKETS
+    end
+
+    subgraph ELECTRICAL["Removable NeoPixel circuit"]
+        direction TB
+        BAT["Battery<br/>type and voltage verified first"]
+        SWITCH["Power switch"]
+        POWER["Power stage matched to strip<br/>5 V regulator if required"]
+        XIAO["Small ESP32 controller"]
+        LIMIT["300-500 ohm data resistor"]
+        LIGHT["NeoPixel strip DIN"]
+        CAP["500-1000 uF capacitor<br/>across strip power input"]
+        PLUG["Removable 3-wire plug<br/>power / data / ground"]
+        GROUND["Common ground"]
+
+        BAT --> SWITCH
+        SWITCH --> POWER
+        POWER --> XIAO
+        POWER --> PLUG
+        XIAO --> LIMIT
+        LIMIT --> PLUG
+        PLUG --> LIGHT
+        POWER --> CAP
+        CAP --> GROUND
+        LIGHT --> GROUND
+        XIAO --> GROUND
+        BAT --> GROUND
+    end
+
+    POCKETS -. "houses" .-> BAT
+    POCKETS -. "houses" .-> XIAO
+    FILAMENT -. "same light" .-> LIGHT
+
+    classDef fabric fill:#273142,color:#f8fafc,stroke:#64748b,stroke-width:1px;
+    classDef light fill:#083344,color:#cffafe,stroke:#22d3ee,stroke-width:2px;
+    classDef power fill:#3f1d2e,color:#fce7f3,stroke:#f472b6,stroke-width:1px;
+    classDef control fill:#172554,color:#dbeafe,stroke:#60a5fa,stroke-width:1px;
+    class SHIRT,WINDOW,CARRIER,TABS,SEAM,POCKETS fabric;
+    class FILAMENT,LIGHT light;
+    class BAT,SWITCH,POWER,CAP power;
+    class XIAO,LIMIT,PLUG,GROUND control;

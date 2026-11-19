@@ -1,0 +1,24 @@
+flowchart LR
+    VIEW["Viewer / outside"] --> MESH["Optional black sheer mesh<br/>hides the module when off"]
+    MESH --> DIFF["White translucent fabric<br/>diffuser face"]
+    DIFF --> GAP["5-10 mm soft air gap<br/>created by spacer strips at edges"]
+    GAP --> LED["Your NeoPixel strip<br/>LEDs point outward"]
+    LED --> CARRIER["Flexible non-stretch carrier<br/>grosgrain ribbon or folded fabric"]
+    CARRIER --> ATTACH["3-4 sewn loops or a narrow sleeve<br/>carrier slides out for washing"]
+    ATTACH --> SHIRT["Existing black shirt"]
+
+    LED --> PLUG["Removable 3-wire plug<br/>5V / data / ground"]
+    PLUG --> SEAM["Wire tunnel down side seam"]
+    SEAM --> POCKETS["Separate hem pockets<br/>controller + battery"]
+
+    DENSITY["Pixel density check<br/>30/m: dots likely<br/>60/m: workable<br/>144/m: smoother"] -. affects .-> GAP
+
+    classDef light fill:#dffcff,stroke:#008ea3,color:#003b43,stroke-width:2px;
+    classDef garment fill:#24272b,stroke:#6f7782,color:#ffffff,stroke-width:2px;
+    classDef hardware fill:#e8e1ff,stroke:#7057ad,color:#241942,stroke-width:2px;
+    classDef note fill:#fff3c4,stroke:#b18400,color:#4a3600,stroke-width:2px;
+
+    class MESH,SHIRT garment;
+    class DIFF,GAP,LED light;
+    class CARRIER,ATTACH,PLUG,SEAM,POCKETS hardware;
+    class VIEW,DENSITY note;
